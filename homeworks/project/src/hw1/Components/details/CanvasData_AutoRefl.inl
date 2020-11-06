@@ -12,10 +12,20 @@ struct Ubpa::USRefl::TypeInfo<CanvasData>
 
     static constexpr FieldList fields = {
         Field{"points", &CanvasData::points},
+        Field{"LagrangeResults", &CanvasData::LagrangeResults},
+        Field{"GaussResults", &CanvasData::GaussResults},
+        Field{"LeastSquaresResults", &CanvasData::LeastSquaresResults},
+        Field{"RidgeRegressionResults", &CanvasData::RidgeRegressionResults},
         Field{"scrolling", &CanvasData::scrolling},
         Field{"opt_enable_grid", &CanvasData::opt_enable_grid},
         Field{"opt_enable_context_menu", &CanvasData::opt_enable_context_menu},
+        Field{"opt_lagrange", &CanvasData::opt_lagrange},
+        Field{"opt_gauss", &CanvasData::opt_gauss},
+        Field{"opt_least_squares", &CanvasData::opt_least_squares},
+        Field{"opt_ridge_regression", &CanvasData::opt_ridge_regression},
         Field{"adding_line", &CanvasData::adding_line},
+        Field{"LeastSquaresM", &CanvasData::LeastSquaresM},
+        Field{"RidgeRegressionLamda", &CanvasData::RidgeRegressionLamda},
     };
 };
 
