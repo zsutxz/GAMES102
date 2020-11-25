@@ -46,5 +46,6 @@ assets/materials/
 assets/models/
 assets/textures/
 
-imgui*.ini
 homeworks/project/bin/CMakeFiles/cmake.check_cache
+*/imgui_App_Editor_game.ini
+homeworks/project/bin/imgui_App_Editor_game.ini
