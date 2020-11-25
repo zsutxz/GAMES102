@@ -1,11 +1,12 @@
 #include <Utopia/App/Editor/Editor.h>
+#include <Utopia/Core/Components/Name.h>
 
 #include <Utopia/App/Editor/InspectorRegistry.h>
 
 #include <UECS/World.h>
 
-#include "Components/CanvasData.h"
-#include "Systems/CanvasSystem.h"
+#include "Components/DenoiseData.h"
+#include "Systems/DenoiseSystem.h"
 
 #ifndef NDEBUG
 #include <dxgidebug.h>
@@ -25,9 +26,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
             return 1;
 
         auto game = app.GetGameWorld();
-        game->systemMngr.RegisterAndActivate<CanvasSystem>();
-        game->entityMngr.cmptTraits.Register<CanvasData>();
-        game->entityMngr.Create<CanvasData>();
+        game->systemMngr.RegisterAndActivate<DenoiseSystem>();
+        game->entityMngr.cmptTraits.Register<DenoiseData>();
+        {
+            auto [e, data, n] = game->entityMngr.Create<DenoiseData, Name>();
+            n->value = "Denoise Data";
+        }
+        Ubpa::Utopia::InspectorRegistry::Instance().RegisterCmpts<DenoiseData>();
 
 		rst = app.Run();
     }
@@ -39,7 +44,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 #ifndef NDEBUG
 	Microsoft::WRL::ComPtr<IDXGIDebug> debug;
 	DXGIGetDebugInterface1(0, IID_PPV_ARGS(&debug));
-	debug->ReportLiveObjects(DXGI_DEBUG_ALL, DXGI_DEBUG_RLO_DETAIL);
+    if(debug)
+	    debug->ReportLiveObjects(DXGI_DEBUG_ALL, DXGI_DEBUG_RLO_DETAIL);
 #endif
 
 	return rst;
