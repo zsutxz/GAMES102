@@ -13,37 +13,22 @@ struct Ubpa::USRefl::TypeInfo<CanvasData> :
 #endif
     static constexpr AttrList attrs = {};
     static constexpr FieldList fields = {
-<<<<<<< HEAD
-        Field{"points", &CanvasData::points},
-        Field{"LagrangeResults", &CanvasData::LagrangeResults},
-        Field{"GaussResults", &CanvasData::GaussResults},
-        Field{"LeastSquaresResults", &CanvasData::LeastSquaresResults},
-        Field{"RidgeRegressionResults", &CanvasData::RidgeRegressionResults},
-        Field{"scrolling", &CanvasData::scrolling},
-        Field{"opt_enable_grid", &CanvasData::opt_enable_grid},
-        Field{"opt_enable_context_menu", &CanvasData::opt_enable_context_menu},
-        Field{"opt_lagrange", &CanvasData::opt_lagrange},
-        Field{"opt_gauss", &CanvasData::opt_gauss},
-        Field{"opt_least_squares", &CanvasData::opt_least_squares},
-        Field{"opt_ridge_regression", &CanvasData::opt_ridge_regression},
-        Field{"adding_line", &CanvasData::adding_line},
-        Field{"LeastSquaresM", &CanvasData::LeastSquaresM},
-        Field{"RidgeRegressionLamda", &CanvasData::RidgeRegressionLamda},
-=======
-        Field {TSTR("points"), &Type::points},
-        Field {TSTR("scrolling"), &Type::scrolling, AttrList {
-            Attr {TSTR(UMeta::initializer), []()->Ubpa::valf2{ return { 0.f,0.f }; }},
-        }},
-        Field {TSTR("opt_enable_grid"), &Type::opt_enable_grid, AttrList {
-            Attr {TSTR(UMeta::initializer), []()->bool{ return { true }; }},
-        }},
-        Field {TSTR("opt_enable_context_menu"), &Type::opt_enable_context_menu, AttrList {
-            Attr {TSTR(UMeta::initializer), []()->bool{ return { true }; }},
-        }},
-        Field {TSTR("adding_line"), &Type::adding_line, AttrList {
-            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
-        }},
->>>>>>> f4c14e8c244a78d0f3e5ef536d159db5e92206f3
+    Field{"points", &CanvasData::points},
+    Field{"LagrangeResults", &CanvasData::LagrangeResults},
+    Field{"GaussResults", &CanvasData::GaussResults},
+    Field{"LeastSquaresResults", &CanvasData::LeastSquaresResults},
+    Field{"RidgeRegressionResults", &CanvasData::RidgeRegressionResults},
+    Field{"scrolling", &CanvasData::scrolling},
+    Field{"opt_enable_grid", &CanvasData::opt_enable_grid},
+    Field{"opt_enable_context_menu", &CanvasData::opt_enable_context_menu},
+    Field{"opt_lagrange", &CanvasData::opt_lagrange},
+    Field{"opt_gauss", &CanvasData::opt_gauss},
+    Field{"opt_least_squares", &CanvasData::opt_least_squares},
+    Field{"opt_ridge_regression", &CanvasData::opt_ridge_regression},
+    Field{"adding_line", &CanvasData::adding_line},
+    Field{"LeastSquaresM", &CanvasData::LeastSquaresM},
+    Field{"RidgeRegressionLamda", &CanvasData::RidgeRegressionLamda},
+
     };
 };
 
