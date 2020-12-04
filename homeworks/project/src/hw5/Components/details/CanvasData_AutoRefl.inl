@@ -18,12 +18,18 @@ struct Ubpa::USRefl::TypeInfo<CanvasData> :
             Attr {TSTR(UMeta::initializer), []()->Ubpa::valf2{ return { 0.f,0.f }; }},
         }},
         Field {TSTR("opt_enable_grid"), &Type::opt_enable_grid, AttrList {
-            Attr {TSTR(UMeta::initializer), []()->bool{ return { true }; }},
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
         }},
         Field {TSTR("opt_enable_context_menu"), &Type::opt_enable_context_menu, AttrList {
             Attr {TSTR(UMeta::initializer), []()->bool{ return { true }; }},
         }},
-        Field {TSTR("adding_line"), &Type::adding_line, AttrList {
+        Field {TSTR("importData"), &Type::importData, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
+        }},
+        Field {TSTR("exportData"), &Type::exportData, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
+        }},
+        Field {TSTR("isEnd"), &Type::isEnd, AttrList {
             Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
         }},
     };
